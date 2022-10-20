@@ -1,6 +1,7 @@
 import array
 
-
+    """Generate an array with steps elements that containts Fibonacci numbers. Numbers will be stored as doubles
+    """
 def gen_fibonacci(steps = 100):
     v = array.array('d')
     a, b = 0, 1
@@ -12,6 +13,8 @@ def gen_fibonacci(steps = 100):
     return v
 
 
+    """Generate an array with steps elements that contains even numbers
+    """
 def gen_vector_even(steps=100):
     v = array.array('I')
 
@@ -20,7 +23,8 @@ def gen_vector_even(steps=100):
 
     return v
 
-
+    """Generate an array with steps elements that contains odd numbers
+    """
 def gen_vector_odd(steps=100):
     v = array.array('I')
 
