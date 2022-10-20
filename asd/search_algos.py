@@ -9,7 +9,7 @@ def binary_search(v, k, start, end):
         raise RuntimeError('start cannot be smaller than 0')
     if end >= len(v):
         raise RuntimeError(f'end({end}) is greater than the number of elements in array: {len(v)}')
-    if start >= end:
+    if start > end:
         raise RuntimeError(f'start index ({start})cannot be greater than end index ({end})')
 
     if start > end or end < start:
