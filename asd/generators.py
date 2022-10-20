@@ -13,7 +13,7 @@ def gen_fibonacci(steps = 100):
     return v
 
 
-    """Generate an array with steps elements that contains even numbers
+    """Generate an array with steps elements that contains even numbers. Numbers are positive integers
     """
 def gen_vector_even(steps=100):
     v = array.array('I')
@@ -23,7 +23,7 @@ def gen_vector_even(steps=100):
 
     return v
 
-    """Generate an array with steps elements that contains odd numbers
+    """Generate an array with steps elements that contains odd numbers. Numbers are positive integers
     """
 def gen_vector_odd(steps=100):
     v = array.array('I')
