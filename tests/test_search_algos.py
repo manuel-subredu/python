@@ -1,6 +1,6 @@
 import pytest
 from asd.generators import *
-from asd.search_algos import binary_search, __binary_search__
+from asd.search_algos import binary_search, __binary_search__, ternary_search
 
 def test_binary_search_edge_cases():
     with pytest.raises(RuntimeError):
@@ -34,3 +34,31 @@ def test_binary_search_negative_no():
 
     assert binary_search(v, -10) == 0
     assert binary_search(v, 0) == 1
+
+def test_ternary_search_edge_cases():
+    with pytest.raises(RuntimeError):
+        ternary_search(None, None)
+
+    with pytest.raises(RuntimeError):
+        ternary_search([], None)
+
+    with pytest.raises(RuntimeError):
+        ternary_search(None, 10)
+
+def test_ternary_search():
+    v = gen_vector_even(100)
+
+    #first element
+    assert ternary_search(v, 0) == 0
+
+    #last element
+    assert ternary_search(v, 198) == 99
+
+    #middle element
+    assert ternary_search(v, 100) == 50
+
+    #left not found
+    assert ternary_search(v, -100) == False
+
+    #right not found
+    assert ternary_search(v, 200) == False
