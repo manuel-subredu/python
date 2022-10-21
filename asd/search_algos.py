@@ -1,10 +1,11 @@
 
 
-def binary_search(v, k, start, end):
-    if v is None or len(v) == 0:
-        raise RuntimeError('Invalid array: not defined or empty')
-    if k is None:
-        raise RuntimeError('Item to search is not valid')
+"""
+Ref: https://www.geeksforgeeks.org/binary-search/?ref=lbp
+
+Complexity: O(log n base 2)
+"""
+def __binary_search__(v, k, start, end):
     if start < 0:
         raise RuntimeError('start cannot be smaller than 0')
     if end >= len(v):
@@ -20,6 +21,17 @@ def binary_search(v, k, start, end):
         return idx
 
     if v[idx] > k:
-        return binary_search(v, k, start, idx - 1)
+        return __binary_search__(v, k, start, idx - 1)
     else:
-        return binary_search(v, k, idx + 1, end)
+        return __binary_search__(v, k, idx + 1, end)
+
+"""
+Wrapper for actual binary search. In this function we make some edge cases checks
+"""
+def binary_search(v, k):
+    if v is None or len(v) == 0:
+        raise RuntimeError('Invalid array: not defined or empty')
+    if k is None:
+        raise RuntimeError('Item to search is not valid')
+
+    return __binary_search__(v, k, 0, len(v)-1)
